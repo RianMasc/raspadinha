@@ -1,0 +1,100 @@
+/* Corpo da página */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e6ccff, #d9b3ff);
+  text-align: center;
+}
+
+/* Título */
+h1 {
+  margin-top: 20px;
+  color: white;
+}
+
+/* Grade 3x3 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Cada quadrado */
+.card {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 15px;
+  background: linear-gradient(145deg, gold, #ffd700);
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  overflow: hidden;
+}
+
+/* Emoji escondido */
+.card span {
+  font-size: 45px;
+  line-height: 110px;
+}
+
+/* Canvas (camada que será raspada) */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Tela escura */
+#overlay {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.5s;
+}
+
+/* Quando ativa */
+#overlay.active {
+  opacity:1;
+  pointer-events:all;
+}
+
+/* Caixa da mensagem */
+#messageBox {
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  font-size:20px;
+  animation: glow 1s infinite alternate;
+}
+
+/* Efeito de brilho */
+@keyframes glow {
+  from { box-shadow: 0 0 10px pink; }
+  to { box-shadow: 0 0 30px hotpink; }
+}
+
+/* Botão */
+#nextBtn {
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:hotpink;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* Confete caindo */
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
