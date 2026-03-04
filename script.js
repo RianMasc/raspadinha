@@ -98,7 +98,7 @@ function createGrid(){
 
     const porcentagem = (transparentes / totalPixels) * 100;
 
-    if(porcentagem > 70 && !raspagemFinalizada){
+    if(porcentagem > 50 && !raspagemFinalizada){
 
       raspagemFinalizada = true;
 
